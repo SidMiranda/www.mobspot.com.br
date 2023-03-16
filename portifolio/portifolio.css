@@ -1,0 +1,65 @@
+body{
+	box-sizing:border-box!important;
+}
+.portifolio-box{
+    position:relative; 
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); 
+	border: solid 2px lightgray;		
+}
+.portifolio-box:hover{
+	border: solid 2px #008CBA;
+}
+.portifolio-overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	transition: .5s ease;
+
+	cursor: pointer;
+}
+
+.portifolio-overlay:hover {
+	opacity: 0.6;
+}
+.portifolio-img{
+	width:250px;
+}
+.portifolio-hr{
+	border: 1px solid lightgray;
+	margin:20px;
+}
+.box-title{
+	padding:10px; 
+	background-color: rgba(33, 37, 41, 0.8);
+	color:white;
+	font-size: 1em;
+	font-weight: 700;
+	position: absolute; 
+	bottom:38px;
+	left:0px;
+	font-family: sans-serif, 'Courier New', Courier, monospace
+}
+.box-type{
+	padding:8px; 
+	background-color: #2B9D4A;
+	border-radius:2px;
+	color:white;
+	font-weight: 600;
+	font-family: sans-serif, 'Courier New', Courier, monospace;
+	padding: 2px 12px;
+	position: absolute; 
+	bottom:10px;
+	line-height: 2;
+	left:30px;
+}
+
+@media only screen and (max-width: 600px) {
+	.portifolio-box{
+        margin-bottom:20px;   
+}
+  }
