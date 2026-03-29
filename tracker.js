@@ -67,14 +67,18 @@
             // 1. Tenta identificar de forma exata usando atributo customizado, texto interno ou aria-label
             let btnId = el.getAttribute('data-track') || 
                         el.innerText.trim().substring(0, 100) || 
-                        el.getAttribute('aria-label');
+                        el.getAttribute('aria-label') ||
+                        el.getAttribute('title');
             
-            // 2. Fallbacks inteligentes para botões de ícone (que não têm texto)
+            // 2. Estratégia de "De/Para" no JS e Fallbacks para botões vazios
             if (!btnId) {
-                if (el.classList.contains('whatsapp-btn')) btnId = 'WhatsApp Flutuante';
-                else if (el.querySelector('.fa-linkedin')) btnId = 'LinkedIn Footer';
-                else if (el.querySelector('.fa-instagram')) btnId = 'Instagram Footer';
-                else btnId = 'Botão sem texto / Apenas Ícone';
+                const linkHref = el.getAttribute('href') || '';
+                
+                if (el.classList.contains('whatsapp-btn') || linkHref.includes('wa.me')) btnId = 'WhatsApp Flutuante';
+                else if (el.querySelector('.fa-linkedin') || linkHref.includes('linkedin.com')) btnId = 'LinkedIn Footer';
+                else if (el.querySelector('.fa-instagram') || linkHref.includes('instagram.com')) btnId = 'Instagram Footer';
+                else if (linkHref.startsWith('#') && linkHref.length > 1) btnId = 'Link Âncora: ' + linkHref;
+                else btnId = 'Link sem identificação (' + (linkHref || 'vazio') + ')';
             }
 
             sessionData.clicks.push({
