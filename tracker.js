@@ -4,7 +4,7 @@
 */
 (function() {
     // SUBSTITUA PELO URL DO SEU WEBHOOK (Google Apps Script)
-    const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwsdPAyNMDTwk3DS1xZwArLv7ixdtmlz3rOVHdT34twgq33xJj7zXWpLPp0YAdVPelN/exec';
+    const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzo-8tG3mqnePAQwg1ItoZPpOg2_3wFWE4BkcY-60OW9875saIPR5uRL7RaLrJWfOs/exec';
 
     // Gera um UUID anônimo para identificar unicamente o dispositivo
     function generateUUID() {
