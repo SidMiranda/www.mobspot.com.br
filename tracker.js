@@ -4,8 +4,7 @@
 */
 (function() {
     // SUBSTITUA PELO URL DO SEU WEBHOOK (Google Apps Script)
-    const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzo-8tG3mqnePAQwg1ItoZPpOg2_3wFWE4BkcY-60OW9875saIPR5uRL7RaLrJWfOs/exec';
-
+    const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbysxXApr72BGYJe0hB3DzMzTD8lG1lni0hMn5JTsAutRW0oVSjNaEJCkpq-yMGHFyIT/exec';
     // Gera um UUID anônimo para identificar unicamente o dispositivo
     function generateUUID() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -65,10 +64,22 @@
         // Pega o elemento clicado ou o link/botão pai mais próximo
         const el = e.target.closest('a, button');
         if (el) {
+            // 1. Tenta identificar de forma exata usando atributo customizado, texto interno ou aria-label
+            let btnId = el.getAttribute('data-track') || 
+                        el.innerText.trim().substring(0, 100) || 
+                        el.getAttribute('aria-label');
+            
+            // 2. Fallbacks inteligentes para botões de ícone (que não têm texto)
+            if (!btnId) {
+                if (el.classList.contains('whatsapp-btn')) btnId = 'WhatsApp Flutuante';
+                else if (el.querySelector('.fa-linkedin')) btnId = 'LinkedIn Footer';
+                else if (el.querySelector('.fa-instagram')) btnId = 'Instagram Footer';
+                else btnId = 'Botão sem texto / Apenas Ícone';
+            }
+
             sessionData.clicks.push({
-                id: el.id || 'sem-id',
-                tag: el.tagName.toLowerCase(),
-                text: el.innerText.trim().substring(0, 100) || el.getAttribute('aria-label') || 'sem-texto',
+                identificacao: btnId,
+                classes: el.className || 'sem-classe',
                 href: el.href || null,
                 time: new Date().toISOString()
             });
