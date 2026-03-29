@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>teste</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<style>
+    .box{
+        position:relative; 
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);   
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: #008CBA;
+        cursor: pointer;
+    }
+
+    .overlay:hover {
+        opacity: 0.6;
+    }
+    img{
+        width:250px;
+    }
+    hr{
+        border: 1px solid lightgray;
+        margin:20px;
+    }
+    .box-title{
+        padding:10px; 
+        background-color: rgba(33, 37, 41, 0.8);
+        color:white;
+        font-size: 1em;
+        font-weight: 700;
+        position: absolute; 
+        bottom:38px;
+        left:0px;
+        font-family: sans-serif, 'Courier New', Courier, monospace
+    }
+    .box-type{
+        padding:8px; 
+        background-color: #2B9D4A;
+        border-radius:2px;
+        color:white;
+        font-weight: 600;
+        font-family: sans-serif, 'Courier New', Courier, monospace;
+        padding: 2px 12px;
+        position: absolute; 
+        bottom:10px;
+        line-height: 2;
+        left:30px;
+    }
+</style>
+<body>
+    <div style="text-align: center; max-width: 1100px; margin:auto;">
+        <div style="display: flex; justify-content: space-around;">
+            <div class="box">
+                <img src="caboatan.jpg">
+                <div class="overlay"></div>
+                <div class="box-title">Caboatan & Associados</div>
+                <div class="box-type">SITE</div>
+            </div>
+            <div class="box">
+                <img src="diferencial.jpg">
+                <div class="overlay"></div>
+                <div class="box-title">Diferencial Andaimes</div>
+                <div class="box-type">LOJA VIRTUAL</div>
+            </div>
+            <div class="box">
+                <img src="adriana.jpg">
+                <div class="overlay"></div>
+                <div class="box-title">Adriana Psicologa</div>
+                <div class="box-type">SITE</div>
+            </div>
+            <div class="box">
+                <img src="emporio.jpg">
+                <div class="overlay"></div>
+                <div class="box-title">Ponto do Grão</div>
+                <div class="box-type">SITE</div>
+            </div>
+        </div>
+        <hr>
+        <div style="display: flex; justify-content: space-around;">
+            <div class="box">
+                <img src="geladao.jpg">
+                <div class="overlay"></div>
+                <div class="box-title">Adega Geladão</div>
+                <div class="box-type">WEB APP</div>
+            </div>
+            <div class="box">
+                <img src="comnect.jpg">
+                <div class="overlay"></div>
+                <div class="box-title">Wnb Comnect</div>
+                <div class="box-type">SITE</div>
+            </div>
+            <div class="box">
+                <img src="fasttv.jpg">
+                <div class="overlay"></div>
+                <div class="box-title">Fast TV</div>
+                <div class="box-type">SITE</div>
+            </div>
+            <div class="box">
+                <img src="chlimp.jpg">
+                <div class="overlay"></div>
+                <div class="box-title"> CH Limp</div>
+                <div class="box-type">WEB APP</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
