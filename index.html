@@ -268,6 +268,17 @@
     <i class="fab fa-whatsapp"></i>
 </a>
 
+<!-- Popup de Cookies -->
+<div id="cookie-popup" class="cookie-popup">
+    <div class="cookie-content">
+        <p>Usamos cookies para analisar o tráfego e melhorar sua experiência. Ao continuar navegando, você concorda com a nossa política de privacidade.</p>
+        <div class="cookie-buttons">
+            <button class="btn-cookie btn-accept" data-track="Cookies - Aceitar">Entendi e Aceito</button>
+            <button class="btn-cookie btn-decline" data-track="Cookies - Recusar">Recusar</button>
+        </div>
+    </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function(){
@@ -282,6 +293,20 @@
                     scrollTop: target.offset().top - 80
                 }, 400);
             }
+        });
+
+        // --- Lógica do Popup de Cookies ---
+        // Verifica se o usuário já tomou uma decisão anteriormente nesta máquina
+        if (!localStorage.getItem('cookie_consent_mobspot')) {
+            // Aguarda 1,5 segundos após a página carregar para subir o popup
+            setTimeout(function() {
+                $('#cookie-popup').addClass('show');
+            }, 1500);
+        }
+        // Quando clicar em qualquer botão (Aceitar ou Recusar)
+        $('.btn-cookie').on('click', function() {
+            $('#cookie-popup').removeClass('show'); // Tira a classe para descer
+            localStorage.setItem('cookie_consent_mobspot', 'true'); // Salva a escolha
         });
     });
 </script>
