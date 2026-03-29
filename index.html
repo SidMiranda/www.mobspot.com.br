@@ -23,8 +23,8 @@
     <meta property="og:site_name" content="MOBSPOT">
     <meta property="og:title" content="MOBSPOT | Acelere Vendas e Reduza Custos com Tecnologia">
     <meta property="og:description" content="Cansado de processos lentos? Criamos soluções com Inteligência Artificial, AWS e Automação para o seu negócio evoluir sem complicação. Fale com um especialista.">
-    <meta property="og:image" content="https://www.mobspot.com.br/images/card_ads.jpg">
-    <meta property="og:image:secure_url" content="https://www.mobspot.com.br/images/card_ads.jpg">
+    <meta property="og:image" content="https://mobspot.com.br/images/card_ads.jpg">
+    <meta property="og:image:secure_url" content="https://mobspot.com.br/images/card_ads.jpg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -55,6 +55,8 @@
     <nav>
         <ul>
             <li><a href="#solucoes" data-track="solucoes">Soluções</a></li>
+            <li><a href="#sobre" data-track="sobre">Sobre</a></li>
+            <li><a href="#servicos" data-track="servicos">Serviços</a></li>
             <li><a href="#clientes" data-track="clientes">Clientes</a></li>
             <li><a href="#contato" data-track="contato">Contato</a></li>
         </ul>
@@ -71,7 +73,7 @@
     </div>
 </section>
 
-<section id="servicos" style="background: #f0f3f7;">
+<section id="solucoes">
     <div style="text-align: center; margin-bottom: 50px;">
         <h2>Nossas Especialidades</h2>
         <p style="color: var(--text-gray);">Tecnologia aplicada de forma simples e eficiente.</p>
@@ -102,7 +104,34 @@
     </div>
 </section>
 
-<section id="detalhes">
+<section id="sobre" class="sobre-section">
+    <div class="sobre-overlay"></div>
+    <div class="sobre-content-container">
+        <h2>Inovação que Transforma Negócios</h2>
+        <p>Entender a complexidade da <strong>inovação</strong> tecnológica é o primeiro passo para o sucesso. Na MobSpot, somos movidos pelo desafio de integrar sua empresa ao que há de mais moderno no mercado global.</p>
+        <p>Mais do que ferramentas, entregamos inteligência aplicada. Utilizamos o poder da <strong>IA</strong> e das novas tecnologias para simplificar processos e expandir a <strong>presença digital</strong> da sua marca de forma sólida e escalável.</p>
+        
+        <div class="sobre-icon-bar">
+            <div class="sobre-icon-item">
+                <i class="fas fa-brain"></i>
+                <span>IA Aplicada</span>
+            </div>
+            <div class="sobre-icon-item">
+                <i class="fas fa-lightbulb"></i>
+                <span>Inovação Contínua</span>
+            </div>
+            <div class="sobre-icon-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Crescimento Escalável</span>
+            </div>
+        </div>
+
+        <p class="punchline">Sua empresa no ritmo do amanhã. <strong>Hoje.</strong></p>
+        <a href="#detalhes" class="btn-main" data-track="Sobre - Vamos evoluir juntos">Vamos evoluir juntos?</a>
+    </div>
+</section>
+
+<section id="servicos" class="detalhes-section">
     <div style="max-width: 1100px; margin: 0 auto;">
 
         <div class="detalhe-item">
@@ -261,7 +290,7 @@
                 event.preventDefault();
                 $('html, body').stop().animate({
                     scrollTop: target.offset().top - 80
-                }, 1000);
+                }, 400);
             }
         });
     });

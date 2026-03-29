@@ -231,6 +231,77 @@ section { padding: 80px 5%; }
         transform: translateX(-50%) translateY(0);
     }
 
+/* Seção Sobre */
+.sobre-section {
+    padding: 100px 5%;
+    text-align: center;
+    background-color: var(--dark); /* Cor de fallback, você pode trocar pela sua imagem */
+    /* Adicione sua imagem de fundo aqui, ex: background-image: url('images/fundo-futurista.jpg'); */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff;
+    position: relative;
+}
+.sobre-overlay { 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background: rgba(10, 10, 11, 0.85); /* Overlay para garantir a legibilidade do texto */
+    z-index: 1; 
+}
+.sobre-content-container {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.sobre-content-container h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+.sobre-content-container p {
+    font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+    color: #e0e0e0;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+}
+.sobre-content-container p strong {
+    color: var(--accent);
+}
+.sobre-icon-bar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
+.sobre-icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 150px;
+}
+.sobre-icon-item i {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+.sobre-icon-item span {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+.sobre-content-container .punchline {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 600;
+    color: #fff;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
 /* Responsividade Mobile */
 @media (max-width: 768px) {
     nav { display: none; } /* Simplicidade: menu escondido no mobile ou use um hamburger */
