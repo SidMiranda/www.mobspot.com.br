@@ -38,7 +38,7 @@ nav a:hover { color: var(--primary); }
 .hero { 
     padding: 120px 5%; 
     text-align: center; 
-    background-image: url('banner.jpg'); 
+    background-image: url('images/banner.jpg'); 
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -129,6 +129,108 @@ section { padding: 80px 5%; }
     100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 
+/* Estilos para a Seção de Clientes */
+    .clientes-section {
+        background: #111827; /* Fundo escuro elegante para destacar logos brancas/cinzas */
+        padding: 80px 20px;
+    }
+    .clientes-container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    .clientes-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+    .cliente-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 180px;
+        height: 120px;
+        transition: all 0.3s ease;
+        position: relative;
+        text-decoration: none;
+    }
+    .cliente-card img {
+        max-width: 100%;
+        max-height: 100%;
+        transition: all 0.3s ease;
+    }
+    .cliente-card .logo-mono {
+        opacity: 0.6;
+    }
+    .cliente-card .logo-color {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+    /* Efeito ao passar o mouse no Card */
+    .cliente-card:hover {
+        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-5px);
+        border-color: rgba(255, 255, 255, 0.15);
+    }
+    .cliente-card:hover .logo-mono {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    .cliente-card:hover .logo-color {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+    /* Tooltip (Balãozinho) */
+    .cliente-card::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: 115%; /* Posiciona acima do card */
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        background: #ffffff;
+        color: #111827;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        pointer-events: none;
+        z-index: 10;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    /* Setinha do balão */
+    .cliente-card::before {
+        content: '';
+        position: absolute;
+        bottom: 105%;
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        border-width: 6px;
+        border-style: solid;
+        border-color: #ffffff transparent transparent transparent;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 10;
+    }
+    /* Exibe o balão no hover */
+    .cliente-card:hover::after,
+    .cliente-card:hover::before {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+
 /* Responsividade Mobile */
 @media (max-width: 768px) {
     nav { display: none; } /* Simplicidade: menu escondido no mobile ou use um hamburger */
@@ -142,4 +244,11 @@ section { padding: 80px 5%; }
     .detalhe-img, .detalhe-info { min-width: 100%; }
     .detalhe-info h2 { text-align: center; }
     .whatsapp-btn { width: 50px; height: 50px; font-size: 25px; bottom: 20px; right: 20px; }
+    
+    .clientes-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .cliente-card { width: 100%; height: 100px; }
 }
